@@ -1,0 +1,123 @@
+.lexical-editor-wrapper {
+  position: relative;
+}
+
+.lexical-editor {
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lexical-toolbar {
+  display: flex;
+  gap: 2px;
+  padding: 8px;
+  background: var(--hover);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.toolbar-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 3px;
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+}
+
+.toolbar-btn:hover {
+  background: var(--hover);
+  border-color: var(--accent);
+}
+
+.toolbar-btn:active {
+  background: #dee2e6;
+}
+
+.lexical-content-editable {
+  min-height: 120px;
+  padding: 12px;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--card-bg);
+}
+
+.lexical-content-editable:focus {
+  background: var(--hover);
+}
+
+.lexical-placeholder {
+  position: absolute;
+  top: 50px;
+  left: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.lexical-paragraph {
+  margin: 0 0 8px 0;
+}
+
+.lexical-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.lexical-text-bold {
+  font-weight: bold;
+}
+
+.lexical-text-italic {
+  font-style: italic;
+}
+
+.lexical-text-underline {
+  text-decoration: underline;
+}
+
+/* Rich text content styles */
+.lexical-content-editable strong,
+.lexical-content-editable b {
+  font-weight: bold;
+}
+
+.lexical-content-editable em,
+.lexical-content-editable i {
+  font-style: italic;
+}
+
+.lexical-content-editable u {
+  text-decoration: underline;
+}
+
+/* Focus styles */
+.lexical-editor:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .lexical-toolbar {
+    flex-wrap: wrap;
+  }
+  
+  .toolbar-btn {
+    flex: 1;
+    min-width: 40px;
+  }
+  
+  .lexical-content-editable {
+    min-height: 100px;
+    font-size: 16px; /* Better for mobile */
+  }
+}

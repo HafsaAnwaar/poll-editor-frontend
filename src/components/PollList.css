@@ -1,0 +1,144 @@
+.poll-list {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  height: fit-content;
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.poll-list-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--card-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.poll-list-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.poll-list-content {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.poll-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--card-border);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.poll-item:hover {
+  background-color: var(--hover);
+}
+
+.poll-item.selected {
+  background-color: rgba(33, 150, 243, 0.15);
+  border-left: 4px solid var(--accent-2);
+}
+
+.poll-item:last-child {
+  border-bottom: none;
+}
+
+.poll-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.poll-item-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.status {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status.active {
+  background-color: rgba(40,167,69,0.15);
+  color: var(--success);
+}
+
+.status.inactive {
+  background-color: rgba(220,53,69,0.15);
+  color: var(--danger);
+}
+
+.status.multiple-votes {
+  background-color: rgba(0,123,255,0.15);
+  color: var(--accent);
+}
+
+.status.single-answer {
+  background-color: rgba(108,117,125,0.15);
+  color: var(--muted);
+}
+
+.status.multiple-answer {
+  background-color: rgba(0,123,255,0.15);
+  color: var(--accent);
+}
+
+.poll-statuses {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.poll-item-details {
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+  color: var(--muted);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.poll-item-details p {
+  margin: 0;
+}
+
+.poll-item-details .status {
+  margin-left: auto;
+}
+
+.empty-state {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .poll-list {
+    max-height: none;
+  }
+  
+  .poll-item-details {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
